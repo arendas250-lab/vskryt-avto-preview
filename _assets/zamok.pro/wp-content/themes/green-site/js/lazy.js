@@ -1,0 +1,1 @@
+jQuery(".lazy:not(.slide__img)").Lazy({"delay": 0});

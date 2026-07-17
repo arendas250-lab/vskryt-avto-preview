@@ -1,0 +1,32 @@
+# ===== ВскрытьАвто.бел — 301-редиректы (Apache) =====
+RewriteEngine On
+
+# vskritie-auto.by -> основной
+RewriteCond %{HTTP_HOST} ^(www\.)?vskritie-auto\.by$ [NC]
+RewriteRule ^(.*)$ https://xn--80adb4awjfkc0gm.xn--90ais/$1 [R=301,L]
+
+# вскрыть-авто.бел (с дефисом) -> основной
+RewriteCond %{HTTP_HOST} ^(www\.)?xn----8sbec1b1akgld8gn.xn--90ais$ [NC]
+RewriteRule ^(.*)$ https://xn--80adb4awjfkc0gm.xn--90ais/$1 [R=301,L]
+
+# www -> без www и http -> https (основной домен)
+RewriteCond %{HTTP_HOST} ^www\.xn--80adb4awjfkc0gm.xn--90ais$ [NC,OR]
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://xn--80adb4awjfkc0gm.xn--90ais/$1 [R=301,L]
+
+# удалённые услуги -> ближайшая страница
+Redirect 301 /izgotovlenie-avtoklyucha/ /
+Redirect 301 /razmorozka-zamkov-avto/ /vskrytie-avto/
+
+ErrorDocument 404 /404.html
+
+# слаги под ТЗ (301 старый -> новый)
+Redirect 301 /vskrytie-bagazhnika/ /otkryt-bagazhnik/
+Redirect 301 /vskrytie-kapota/ /otkryt-kapot/
+Redirect 301 /vskrytie-benzobaka/ /otkryt-lyuchok-benzobaka/
+Redirect 301 /vskrytie-zamka-zazhiganiya/ /remont-zamka-zazhiganiya/
+Redirect 301 /prices/ /ceny/
+Redirect 301 /reviews/ /otzyvy/
+Redirect 301 /contacts/ /kontakty/
+Redirect 301 /about/ /o-kompanii/
+Redirect 301 /privacy-policy/ /politika-konfidencialnosti/

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_assets/
+
+Sitemap: https://xn--80adb4awjfkc0gm.xn--90ais/sitemap.xml
