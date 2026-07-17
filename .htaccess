@@ -16,7 +16,10 @@ RewriteRule ^(.*)$ https://xn--80adb4awjfkc0gm.xn--90ais/$1 [R=301,L]
 
 # удалённые услуги -> ближайшая страница
 Redirect 301 /izgotovlenie-avtoklyucha/ /
-Redirect 301 /razmorozka-zamkov-avto/ /vskrytie-avto/
+Redirect 301 /razmorozka-zamkov-avto/ /
+
+# смысловой дубль главной -> главная
+Redirect 301 /vskrytie-avto/ /
 
 ErrorDocument 404 /404.html
 
