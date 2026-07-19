@@ -21,6 +21,10 @@ Redirect 301 /razmorozka-zamkov-avto/ /
 # смысловой дубль главной -> главная
 Redirect 301 /vskrytie-avto/ /
 
+# раздел отзывов удалён -> главная
+Redirect 301 /otzyvy/ /
+Redirect 301 /reviews/ /
+
 ErrorDocument 404 /404.html
 
 # слаги под ТЗ (301 старый -> новый)
@@ -29,7 +33,6 @@ Redirect 301 /vskrytie-kapota/ /otkryt-kapot/
 Redirect 301 /vskrytie-benzobaka/ /otkryt-lyuchok-benzobaka/
 Redirect 301 /vskrytie-zamka-zazhiganiya/ /remont-zamka-zazhiganiya/
 Redirect 301 /prices/ /ceny/
-Redirect 301 /reviews/ /otzyvy/
 Redirect 301 /contacts/ /kontakty/
 Redirect 301 /about/ /o-kompanii/
 Redirect 301 /privacy-policy/ /politika-konfidencialnosti/
