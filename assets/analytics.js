@@ -46,3 +46,27 @@ function closeMasterModal() {
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') closeMasterModal();
 });
+
+/* маска ввода телефона +375 (__) ___-__-__ на всех полях type=tel */
+document.addEventListener('DOMContentLoaded', function () {
+  function formatPhone(digits) {
+    digits = digits.slice(0, 9);
+    if (!digits.length) return '';
+    var out = '+375 (' + digits.slice(0, 2);
+    if (digits.length >= 2) out += ')';
+    if (digits.length > 2) out += ' ' + digits.slice(2, 5);
+    if (digits.length > 5) out += '-' + digits.slice(5, 7);
+    if (digits.length > 7) out += '-' + digits.slice(7, 9);
+    return out;
+  }
+  document.querySelectorAll('input[type="tel"]').forEach(function (inp) {
+    inp.addEventListener('input', function () {
+      var digits = inp.value.replace(/\D/g, '');
+      if (digits.slice(0, 3) === '375') digits = digits.slice(3);
+      inp.value = formatPhone(digits);
+    });
+    inp.addEventListener('focus', function () {
+      if (!inp.value) inp.value = '+375 (';
+    });
+  });
+});
