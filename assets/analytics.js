@@ -70,3 +70,35 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+/* мобильное меню-бургер */
+function openMobileNav() {
+  document.documentElement.classList.add('nav-open');
+}
+function closeMobileNav() {
+  document.documentElement.classList.remove('nav-open');
+  document.querySelectorAll('.navbar .has-drop.open').forEach(function (d) {
+    d.classList.remove('open');
+  });
+}
+function toggleMobileNav() {
+  if (document.documentElement.classList.contains('nav-open')) closeMobileNav();
+  else openMobileNav();
+}
+document.addEventListener('DOMContentLoaded', function () {
+  var dropToggle = document.querySelector('.navbar .has-drop > a');
+  if (dropToggle) {
+    dropToggle.addEventListener('click', function (e) {
+      if (window.matchMedia('(max-width:767px)').matches) {
+        e.preventDefault();
+        dropToggle.parentElement.classList.toggle('open');
+      }
+    });
+  }
+  document.querySelectorAll('.navbar a:not(.has-drop > a)').forEach(function (a) {
+    a.addEventListener('click', closeMobileNav);
+  });
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeMobileNav();
+});

@@ -57,6 +57,13 @@ img,svg{display:block;max-width:100%}
 .has-drop{position:relative}
 .drop{position:absolute;top:100%;left:0;background:#fff;border-radius:10px;box-shadow:0 12px 34px rgba(20,29,42,.18);min-width:230px;padding:8px;display:none;z-index:40}
 .has-drop:hover .drop{display:block}
+.burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;flex:0 0 auto;margin-left:auto}
+.burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:.2s}
+.nav-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-open .burger span:nth-child(2){opacity:0}
+.nav-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-backdrop{display:none}
+.nav-close{display:none}
 .drop a{display:block;color:var(--ink);padding:10px 14px;border-radius:8px;font-weight:500;font-size:14px}
 .drop a::after{display:none}
 .drop a:hover{background:var(--orange-soft);color:var(--orange)}
@@ -183,7 +190,6 @@ a.dist:hover svg{stroke:var(--orange)}
 @media(max-width:640px){
   .topbar .wrap{height:auto;padding:12px 20px;flex-wrap:wrap;gap:12px}
   .topphone{margin-left:0}.topphone .btn{display:none}
-  .navbar{overflow-x:auto}.navbar .wrap{justify-content:flex-start}
   .hero .wrap{padding:44px 20px 34px}
   .hero h1{font-size:29px}
   .hero-form{flex-direction:column}
@@ -259,6 +265,26 @@ a.dist:hover svg{stroke:var(--orange)}
   .mobbar .call{background:var(--orange);color:#fff}
   .mobbar .req{background:#fff;color:var(--ink);border:2px solid var(--orange)}
   body{padding-bottom:74px}
+
+  /* бургер-меню */
+  .burger{display:flex}
+  .navbar{background:var(--dark2);position:fixed;top:0;right:0;bottom:0;width:82%;max-width:320px;height:100%;overflow-y:auto;z-index:220;border-top:none;transform:translateX(100%);transition:transform .25s ease;box-shadow:-6px 0 24px rgba(0,0,0,.3)}
+  .nav-open .navbar{transform:translateX(0)}
+  .navbar .wrap{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;height:auto;padding:76px 8px 24px;gap:0}
+  .navbar a{padding:15px 14px;border-bottom:1px solid rgba(255,255,255,.08);white-space:normal}
+  .navbar a.active::after{display:none}
+  .has-drop{display:flex;flex-direction:column}
+  .has-drop>a{display:flex;align-items:center;justify-content:space-between}
+  .drop{position:static;display:none;background:rgba(0,0,0,.18);box-shadow:none;border-radius:0;min-width:0;margin:0;padding:0}
+  .has-drop.open .drop{display:block}
+  .has-drop:hover .drop{display:none}
+  .has-drop.open:hover .drop{display:block}
+  .drop a{color:#d7dde4;border-bottom:1px solid rgba(255,255,255,.06);border-radius:0;padding:13px 22px}
+  .drop a:hover{background:rgba(255,255,255,.06);color:#fff}
+  .nav-backdrop{display:none;position:fixed;inset:0;background:rgba(15,18,26,.55);z-index:210}
+  .nav-open .nav-backdrop{display:block}
+  .nav-open{overflow:hidden}
+  .nav-close{display:flex;position:absolute;top:16px;right:16px;align-items:center;justify-content:center;width:36px;height:36px;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;z-index:2}
 }
 
 /* ===== service page: lead form + related + faq (ТЗ п.12) ===== */
