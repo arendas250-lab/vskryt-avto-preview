@@ -29,3 +29,20 @@
     }
   });
 })();
+
+/* попап «Вызов мастера» — вызывается из кнопки в шапке и из мобильной панели */
+function openMasterModal() {
+  var m = document.getElementById('masterModal');
+  if (!m) return;
+  m.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMasterModal() {
+  var m = document.getElementById('masterModal');
+  if (!m) return;
+  m.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeMasterModal();
+});

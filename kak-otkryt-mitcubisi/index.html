@@ -13,7 +13,7 @@
 <meta content="Открыть Мицубиси — работаем по всему Минску от 50 руб. Аккуратно и быстро, приезд мастера за 15 минут. Тел.: +375 (29) 751-25-51" property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://xn--80adb4awjfkc0gm.xn--90ais/kak-otkryt-mitcubisi/" property="og:url"/><meta content="ВскрытьАвто.бел" property="og:site_name"/><meta content="ru_RU" property="og:locale"/><meta content="https://xn--80adb4awjfkc0gm.xn--90ais/img/og-image.jpg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="Мастер выполняет аварийное вскрытие автомобиля в Минске" property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/><meta content="Открыть Мицубиси в Минске — от 50 руб. Выезд мастера за 15 минут" name="twitter:title"/><meta content="Открыть Мицубиси — работаем по всему Минску от 50 руб. Аккуратно и быстро, приезд мастера за 15 минут. Тел.: +375 (29) 751-25-51" name="twitter:description"/><meta content="https://xn--80adb4awjfkc0gm.xn--90ais/img/og-image.jpg" name="twitter:image"/>
-<link href="../assets/site.css?v=r17" rel="stylesheet"/>
+<link href="../assets/site.css?v=r18" rel="stylesheet"/>
 <link href="../img/favicon.ico" rel="icon" type="image/x-icon"/><link href="../img/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/><link href="../img/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="../img/apple-touch-icon.png" rel="apple-touch-icon"/></head>
 <body>
 <header class="topbar">
@@ -28,7 +28,7 @@
 </div>
 <div class="topphone">
 <a class="ph" href="tel:+375297512551"><svg fill="none" height="19" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="19"><path d="M4 4h3l2 5-2 1a11 11 0 0 0 5 5l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2z"></path></svg>+375 (29) <b>751-25-51</b></a>
-<button class="btn" onclick="location.href='tel:+375297512551'">Вызвать мастера</button>
+<button class="btn" onclick="openMasterModal()">Вызвать мастера</button>
 </div>
 </div>
 </header>
@@ -133,7 +133,21 @@
 </div>
 </div>
 </footer>
-<div class="mobbar"><a class="call" href="tel:+375297512551"><svg fill="none" height="17" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="17"><path d="M4 4h3l2 5-2 1a11 11 0 0 0 5 5l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2z"></path></svg>Позвонить</a><a class="req" href="../index.html#hero">Оставить заявку</a></div>
-<script defer="" src="../assets/analytics.js?v=r17"></script>
+<div class="mobbar"><a class="call" href="tel:+375297512551"><svg fill="none" height="17" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="17"><path d="M4 4h3l2 5-2 1a11 11 0 0 0 5 5l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2z"></path></svg>Позвонить</a><a class="req" href="tel:+375297512551" onclick="openMasterModal();return false;">Оставить заявку</a></div>
+<script defer="" src="../assets/analytics.js?v=r18"></script>
+<div class="modal-overlay" id="masterModal" onclick="if(event.target===this)closeMasterModal()">
+<div class="modal-box">
+<div class="modal-head"><h3>Вызов мастера</h3><button class="modal-close" onclick="closeMasterModal()" aria-label="Закрыть">×</button></div>
+<div class="modal-body">
+<p>Для вызова мастера позвоните по круглосуточному номеру:</p>
+<a class="modal-phone" href="tel:+375297512551">+375 (29) 751-25-51</a>
+<p>Или оставьте свой номер телефона и мы сразу же позвоним вам</p>
+<form class="modal-form" onsubmit="return false">
+<input aria-label="Ваш телефон" placeholder="+375 (" type="tel"/>
+<button class="btn btn-lg" type="submit">Отправить</button>
+</form>
+</div>
+</div>
+</div>
 </body>
 </html>

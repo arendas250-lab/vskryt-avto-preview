@@ -15,6 +15,21 @@ img,svg{display:block;max-width:100%}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--orange);color:#fff;font-weight:700;border:none;border-radius:10px;padding:13px 22px;cursor:pointer;transition:.18s;font-size:15px}
 .btn:hover{background:var(--orange2);transform:translateY(-1px);box-shadow:0 8px 18px rgba(245,129,31,.32)}
 .btn-lg{padding:15px 28px;font-size:16px}
+.modal-overlay{position:fixed;inset:0;background:rgba(15,18,26,.55);display:none;align-items:center;justify-content:center;z-index:999;padding:16px}
+.modal-overlay.open{display:flex}
+.modal-box{background:#fff;border-radius:16px;max-width:420px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.modal-head{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--line)}
+.modal-head h3{font-size:24px;margin:0}
+.modal-close{background:none;border:none;font-size:26px;line-height:1;color:#9aa1ad;cursor:pointer;padding:2px 6px}
+.modal-close:hover{color:var(--dark)}
+.modal-body{padding:22px}
+.modal-body p{color:#5b6472;margin:0 0 14px}
+.modal-phone{display:block;text-align:center;background:#f3f5f8;border-radius:12px;padding:18px 10px;font-size:26px;font-weight:800;color:#2461d9;text-decoration:none;margin-bottom:18px}
+.modal-phone:hover{background:#eaedf2}
+.modal-form{display:flex;flex-direction:column;gap:12px}
+.modal-form input{border:1px solid var(--line);border-radius:10px;padding:13px 14px;font-size:15px;font-family:inherit}
+.modal-form input:focus{outline:2px solid var(--orange)}
+@media(max-width:480px){.modal-phone{font-size:22px}}
 .sec{padding:54px 0}
 .sec-alt{background:var(--bg)}
 .sec-title{text-align:center;font-size:29px;font-weight:800;margin-bottom:34px}
