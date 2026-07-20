@@ -70,7 +70,7 @@ img,svg{display:block;max-width:100%}
 
 /* HERO */
 .hero{position:relative;background:var(--dark);color:#fff;overflow:hidden}
-.hero-photo{position:absolute;top:0;right:0;width:56%;height:100%;background:url(../img/avarijnoe-vskrytie-avto-minsk.jpg) center/cover no-repeat;background-image:-webkit-image-set(url(../img/avarijnoe-vskrytie-avto-minsk.webp) type("image/webp") 1x, url(../img/avarijnoe-vskrytie-avto-minsk.jpg) type("image/jpeg") 1x);background-image:image-set(url(../img/avarijnoe-vskrytie-avto-minsk.webp) type("image/webp"), url(../img/avarijnoe-vskrytie-avto-minsk.jpg) type("image/jpeg"));background-size:cover;background-position:center;background-repeat:no-repeat}
+.hero-photo{position:absolute;top:0;right:0;width:56%;height:100%;background:url(../img/avarijnoe-vskrytie-avto-minsk.jpg?v=r21) center/cover no-repeat;background-image:-webkit-image-set(url(../img/avarijnoe-vskrytie-avto-minsk.webp?v=r21) type("image/webp") 1x, url(../img/avarijnoe-vskrytie-avto-minsk.jpg?v=r21) type("image/jpeg") 1x);background-image:image-set(url(../img/avarijnoe-vskrytie-avto-minsk.webp?v=r21) type("image/webp"), url(../img/avarijnoe-vskrytie-avto-minsk.jpg?v=r21) type("image/jpeg"));background-size:cover;background-position:center;background-repeat:no-repeat}
 .hero-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--dark) 0%,rgba(30,39,51,.85) 22%,rgba(30,39,51,.15) 55%,rgba(30,39,51,0) 100%)}
 .hero .wrap{position:relative;z-index:2;padding:60px 20px 44px}
 .hero-left{max-width:560px}
