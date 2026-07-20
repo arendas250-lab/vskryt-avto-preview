@@ -91,7 +91,7 @@ img,svg{display:block;max-width:100%}
 .grid{display:grid;gap:18px}
 .g6{grid-template-columns:repeat(6,1fr)}
 #services .grid.g6{display:flex;flex-wrap:wrap;justify-content:center}
-#services .grid.g6 .card{flex:1 1 200px;max-width:calc(16.666% - 15px)}
+#services .grid.g6 .card{flex:1 1 200px;max-width:calc(25% - 14px)}
 @media(max-width:980px){#services .grid.g6 .card{max-width:calc(33.333% - 12px)}}
 @media(max-width:640px){#services .grid.g6 .card{max-width:calc(50% - 5px)}}
 .why .grid.g6{display:flex;flex-wrap:wrap;justify-content:center}
